@@ -64,3 +64,23 @@ body {
   background: #fde8e8;
   color: #b42318;
 }
+
+.site {
+  border-left: 6px solid #2e9d5b;
+}
+
+.site--bad {
+  border-left-color: #d23b3b;
+}
+
+.site__status {
+  display: block;
+  margin-bottom: 6px;
+  color: #2e9d5b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.site--bad .site__status {
+  color: #d23b3b;
+}
