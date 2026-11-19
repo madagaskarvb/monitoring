@@ -22,6 +22,9 @@ jobs:
           node-version: 24
       - name: Проверить сайты
         run: node scripts/check.mjs
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: Сохранить результаты в репозиторий
         run: |
           git config user.name "github-actions[bot]"
