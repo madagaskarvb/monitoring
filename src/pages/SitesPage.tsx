@@ -9,7 +9,12 @@ export default function SitesPage() {
     return <p className="load-error">{error}</p>
   }
 
-  const failedCount = last?.checks.filter((c) => !c.ok).length || 0
+  // FIX: Only count failures for sites that exist in the `sites` array
+  const failedCount = sites.filter((site) => {
+    const check = last?.checks.find((c) => c.id === site.id)
+    return check !== undefined && !check.ok
+  }).length
+  
   const totalCount = sites.length
 
   return (
