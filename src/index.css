@@ -9,8 +9,9 @@ body {
   color: #1f2430;
 }
 
+/* --- Header & Navigation --- */
 .header {
-  padding: 24px 32px;
+  padding: 24px 32px 0 32px; /* Removed bottom padding to merge with nav */
   background: #1f2430;
   color: #ffffff;
 }
@@ -25,16 +26,42 @@ body {
   color: #c4cad8;
 }
 
+.nav {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.nav__link {
+  padding: 10px 24px;
+  color: #b8c0d4;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav__link:hover {
+  color: #ffffff;
+}
+
+.nav__link--active {
+  background: #f5f6f9;
+  color: #1f2430;
+}
+
+/* --- Main Layout --- */
 .main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 24px 32px;
 }
 
+/* --- Sites Grid --- */
 .sites {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
+  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -43,19 +70,68 @@ body {
 .site {
   padding: 16px;
   border: 1px solid #dfe3eb;
+  border-left: 6px solid #2e9d5b;
   border-radius: 8px;
   background: #ffffff;
+  transition: box-shadow 0.2s;
+}
+
+.site:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.site--bad {
+  border-left-color: #d23b3b;
+}
+
+.site__status {
+  display: block;
+  margin-bottom: 8px;
+  color: #2e9d5b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.site--bad .site__status {
+  color: #d23b3b;
+}
+
+/* We changed the <a> to a Link wrapper, so we style the link here */
+.site__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.site__link:hover h2 {
+  color: #2f6fde;
 }
 
 .site h2 {
   margin: 0 0 6px;
   font-size: 18px;
+  color: #1f2430;
+  transition: color 0.2s;
 }
 
-.site a {
+.site__url {
   color: #2f6fde;
   font-size: 14px;
   overflow-wrap: anywhere;
+  display: block;
+}
+
+/* --- Alert Banner --- */
+.alert {
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.alert--error {
+  background: #fde8e8;
+  color: #b42318;
 }
 
 .load-error {
@@ -65,22 +141,97 @@ body {
   color: #b42318;
 }
 
-.site {
-  border-left: 6px solid #2e9d5b;
+/* --- Site Details Page --- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #2f6fde;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.site--bad {
-  border-left-color: #d23b3b;
+.back-link:hover {
+  text-decoration: underline;
 }
 
-.site__status {
-  display: block;
-  margin-bottom: 6px;
-  color: #2e9d5b;
-  font-size: 13px;
+.site-detail__title {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.site-detail__url {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #2f6fde;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.site-detail__url:hover {
+  text-decoration: underline;
+}
+
+.site-detail__summary {
+  color: #3d4557;
+  margin-bottom: 24px;
+}
+
+/* --- Tables (Adapted from your reference) --- */
+.checks-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #dde1ea;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.checks-table th,
+.checks-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #dde1ea;
+  text-align: left;
+}
+
+.checks-table th {
+  background: #f8f9fa;
   font-weight: 600;
+  color: #5b6478;
 }
 
-.site--bad .site__status {
-  color: #d23b3b;
+.checks-table td:last-child {
+  text-align: right;
+}
+
+.checks-table tr:last-child td {
+  border-bottom: none;
+}
+
+.row-ok {
+  background: #ffffff;
+}
+
+.row-ok td {
+  color: #2e9d5b; /* Green text for OK */
+}
+
+.row-bad {
+  background: #fde8e8;
+}
+
+.row-bad td {
+  color: #b42318; /* Red text for errors */
+}
+
+/* --- About Page & 404 --- */
+.about-page h2,
+.not-found h2 {
+  margin-top: 0;
+}
+
+.about-page p {
+  line-height: 1.6;
+  color: #3d4557;
+  max-width: 800px;
 }
