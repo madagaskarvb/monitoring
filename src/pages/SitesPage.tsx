@@ -1,44 +1,46 @@
 import { Link } from 'react-router'
 import { useMonitoring } from '../monitoring'
+import { sitesWord } from '../plural'
 import { statusText } from '../status'
 
-export default function SitesPage() {
-  const { sites, last, error } = useMonitoring()
+function SitesPage() {
+  const { sites, history, loading, error } = useMonitoring()
 
-  if (error) {
+  if (loading) {
+    return <p className="empty">Загрузка результатов…</p>
+  }
+  if (error !== '') {
     return <p className="load-error">{error}</p>
   }
 
-  // FIX: Only count failures for sites that exist in the `sites` array
-  const failedCount = sites.filter((site) => {
-    const check = last?.checks.find((c) => c.id === site.id)
-    return check !== undefined && !check.ok
-  }).length
-  
-  const totalCount = sites.length
+  const last = history[0]
+  const down = sites.filter((site) => !last?.checks.find((c) => c.id === site.id)?.ok).length
+  let summary = `Все ${sites.length} ${sitesWord(sites.length)} открываются`
+  if (last === undefined) {
+    summary = 'Проверок ещё не было'
+  } else if (down > 0) {
+    summary = `Не открываются: ${down} из ${sites.length}`
+  }
 
   return (
     <>
-      {failedCount > 0 && (
-        <div className="alert alert--error">
-          Не открываются: {failedCount} из {totalCount}
-        </div>
-      )}
-      
-      <ul className="sites">
+      <p className={last !== undefined && down > 0 ? 'summary summary--bad' : 'summary'}>
+        {summary}
+      </p>
+      <div className="sites">
         {sites.map((site) => {
           const check = last?.checks.find((c) => c.id === site.id)
           return (
-            <li key={site.id} className={check?.ok ? 'site' : 'site site--bad'}>
+            <Link key={site.id} to={`/site/${site.id}`} className={check?.ok ? 'site' : 'site site--bad'}>
               <span className="site__status">{statusText(check)}</span>
-              <Link to={`/site/${site.id}`} className="site__link">
-                <h2>{site.name}</h2>
-                <span className="site__url">{site.url}</span>
-              </Link>
-            </li>
+              <h2>{site.name}</h2>
+              <span className="site__url">{site.url}</span>
+            </Link>
           )
         })}
-      </ul>
+      </div>
     </>
   )
 }
+
+export default SitesPage

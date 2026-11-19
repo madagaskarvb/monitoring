@@ -17,18 +17,16 @@ type MonitoringProviderProps = {
 function MonitoringProvider({ children }: MonitoringProviderProps) {
   const [sites, setSites] = useState<Site[]>([])
   const [history, setHistory] = useState<Run[]>([])
-  // Инициализируем loading как true, чтобы первый рендер показывал загрузку
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
-  // Эта функция только делает запрос и обновляет данные ПОСЛЕ await
   const fetchData = useCallback(async () => {
     try {
       const list: Site[] = await loadJson('sites.json')
       const results: { history: Run[] } = await loadJson('results.json')
       setSites(list)
       setHistory(results.history ?? [])
-      setError('') // Очищаем ошибку при успехе
+      setError('')
     } catch (e) {
       setError((e as Error).message)
     } finally {
@@ -36,25 +34,14 @@ function MonitoringProvider({ children }: MonitoringProviderProps) {
     }
   }, [])
 
-  // Эффект просто вызывает fetchData, без синхронных setState
-   useEffect(() => {
-    async function load() {
-      await fetchData()
-    }
-    load()
-  }, [fetchData])
-
-  // Функция retry вызывается из обработчика событий (например, клика),
-  // поэтому синхронный setState здесь безопасен и не вызывает предупреждений.
-  const retry = useCallback(() => {
-    setLoading(true)
-    setError('')
+  useEffect(() => {
+    // oxlint-disable-next-line react/set-state-in-effect
     fetchData()
   }, [fetchData])
 
-  const last = history[0]
+  // Функция retry полностью удалена
 
-  const monitoring = { sites, history, last, loading, error, retry }
+  const monitoring = { sites, history, loading, error }
 
   return <MonitoringContext value={monitoring}>{children}</MonitoringContext>
 }

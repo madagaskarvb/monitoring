@@ -33,6 +33,8 @@ jobs:
           cache: npm
       - name: Установить зависимости
         run: npm ci
+      - name: Запустить тесты
+        run: npm test
       - name: Собрать сайт
         run: npm run build
       - name: Копия index.html для прямых ссылок

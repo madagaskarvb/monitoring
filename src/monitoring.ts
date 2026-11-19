@@ -4,10 +4,9 @@ import type { Run, Site } from './types'
 export type Monitoring = {
   sites: Site[]
   history: Run[]
-  last: Run | undefined
   loading: boolean
   error: string
-  retry: () => void
+  // retry удален
 }
 
 export const MonitoringContext = createContext<Monitoring | null>(null)

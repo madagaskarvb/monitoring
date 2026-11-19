@@ -29,8 +29,9 @@ export default function SitePage() {
         {site.url}
       </a>
       
+      {/* ИСПОЛЬЗУЕМ ШАБЛОННУЮ СТРОКУ ЗДЕСЬ */}
       <p className="site-detail__summary">
-        Открывался в {okChecks} из {totalChecks} последних проверок.
+        {`Открывался в ${okChecks} из ${totalChecks} последних проверок.`}
       </p>
 
       <table className="checks-table">

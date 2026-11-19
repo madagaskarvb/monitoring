@@ -6,7 +6,8 @@ import AboutPage from './pages/AboutPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
-  const { last } = useMonitoring()
+  const { history } = useMonitoring()
+  const last = history[0] // Достаем последнюю проверку здесь
 
   return (
     <>
