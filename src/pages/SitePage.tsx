@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router'
 import { useMonitoring } from '../monitoring'
-import { statusText } from '../statusText'
+import { statusText } from '../status'
 
 export default function SitePage() {
   const { id } = useParams<{ id: string }>()

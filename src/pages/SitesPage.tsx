@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { useMonitoring } from '../monitoring'
-import { statusText } from '../statusText'
+import { statusText } from '../status'
 
 export default function SitesPage() {
   const { sites, last, error } = useMonitoring()
