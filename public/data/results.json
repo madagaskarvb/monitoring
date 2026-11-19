@@ -1,6 +1,60 @@
 {
   "history": [
     {
+      "time": "2026-11-19T18:48:19.838Z",
+      "checks": [
+        {
+          "id": "git",
+          "ok": true,
+          "status": 200,
+          "ms": 357,
+          "error": ""
+        },
+        {
+          "id": "mongodb",
+          "ok": true,
+          "status": 200,
+          "ms": 99,
+          "error": ""
+        },
+        {
+          "id": "english",
+          "ok": true,
+          "status": 200,
+          "ms": 68,
+          "error": ""
+        },
+        {
+          "id": "sysprog",
+          "ok": true,
+          "status": 200,
+          "ms": 245,
+          "error": ""
+        },
+        {
+          "id": "sphinx",
+          "ok": true,
+          "status": 200,
+          "ms": 74,
+          "error": ""
+        },
+        {
+          "id": "staryy",
+          "ok": false,
+          "status": 404,
+          "ms": 37,
+          "error": ""
+        },
+        {
+          "id": "monitoring-test",
+          "ok": false,
+          "status": 404,
+          "ms": 44,
+          "error": ""
+        }
+      ]
+    },
+    {
       "time": "2026-11-19T18:26:32.264Z",
       "checks": [
         {
