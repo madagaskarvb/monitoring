@@ -4,9 +4,11 @@ on:
   schedule:
     - cron: '0 21 * * *'
   workflow_dispatch:
-    
+
 permissions:
-    contents: write
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   check:
@@ -27,3 +29,7 @@ jobs:
           git add public/data/results.json
           git commit -m "Результаты ночной проверки"
           git push
+
+  publish:
+    needs: check
+    uses: ./.github/workflows/deploy.yml
