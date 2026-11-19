@@ -9,7 +9,7 @@ function App() {
     let ignore = false
     async function load() {
       try {
-        const response = await fetch('/data/sites.json')
+                const response = await fetch(`${import.meta.env.BASE_URL}data/sites.json`)
         if (!response.ok) {
           throw new Error(`Список сайтов не загрузился: код ${response.status}.`)
         }
