@@ -33,6 +33,8 @@ jobs:
           cache: npm
       - name: Установить зависимости
         run: npm ci
+      - name: Проверить код линтером
+        run: npm run lint -- --deny-warnings
       - name: Запустить тесты
         run: npm test
       - name: Собрать сайт

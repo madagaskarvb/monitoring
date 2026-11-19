@@ -63,4 +63,10 @@ describe('SitesPage', () => {
     show({ history: [] })
     expect(screen.queryByText(/Не открываются/)).not.toBeInTheDocument()
   })
+
+  it('название карточки начинается с названия сайта', () => {
+    show({})
+    const link = screen.getByRole('link', { name: /^Справочник по React/ })
+    expect(link).toBeInTheDocument()
+  })
 })
