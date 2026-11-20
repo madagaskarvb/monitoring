@@ -1,0 +1,340 @@
+{
+  "history": [
+    {
+      "time": "2026-11-20T01:58:35.822Z",
+      "checks": [
+        {
+          "id": "git",
+          "ok": true,
+          "status": 200,
+          "ms": 448,
+          "error": ""
+        },
+        {
+          "id": "mongodb",
+          "ok": true,
+          "status": 200,
+          "ms": 109,
+          "error": ""
+        },
+        {
+          "id": "english",
+          "ok": true,
+          "status": 200,
+          "ms": 119,
+          "error": ""
+        },
+        {
+          "id": "sysprog",
+          "ok": true,
+          "status": 200,
+          "ms": 149,
+          "error": ""
+        },
+        {
+          "id": "sphinx",
+          "ok": true,
+          "status": 200,
+          "ms": 262,
+          "error": ""
+        },
+        {
+          "id": "staryy",
+          "ok": false,
+          "status": 404,
+          "ms": 66,
+          "error": ""
+        }
+      ]
+    },
+    {
+      "time": "2026-11-19T18:48:19.838Z",
+      "checks": [
+        {
+          "id": "git",
+          "ok": true,
+          "status": 200,
+          "ms": 357,
+          "error": ""
+        },
+        {
+          "id": "mongodb",
+          "ok": true,
+          "status": 200,
+          "ms": 99,
+          "error": ""
+        },
+        {
+          "id": "english",
+          "ok": true,
+          "status": 200,
+          "ms": 68,
+          "error": ""
+        },
+        {
+          "id": "sysprog",
+          "ok": true,
+          "status": 200,
+          "ms": 245,
+          "error": ""
+        },
+        {
+          "id": "sphinx",
+          "ok": true,
+          "status": 200,
+          "ms": 74,
+          "error": ""
+        },
+        {
+          "id": "staryy",
+          "ok": false,
+          "status": 404,
+          "ms": 37,
+          "error": ""
+        },
+        {
+          "id": "monitoring-test",
+          "ok": false,
+          "status": 404,
+          "ms": 44,
+          "error": ""
+        }
+      ]
+    },
+    {
+      "time": "2026-11-19T18:26:32.264Z",
+      "checks": [
+        {
+          "id": "git",
+          "ok": true,
+          "status": 200,
+          "ms": 212,
+          "error": ""
+        },
+        {
+          "id": "mongodb",
+          "ok": true,
+          "status": 200,
+          "ms": 100,
+          "error": ""
+        },
+        {
+          "id": "english",
+          "ok": true,
+          "status": 200,
+          "ms": 108,
+          "error": ""
+        },
+        {
+          "id": "sysprog",
+          "ok": true,
+          "status": 200,
+          "ms": 112,
+          "error": ""
+        },
+        {
+          "id": "sphinx",
+          "ok": true,
+          "status": 200,
+          "ms": 168,
+          "error": ""
+        },
+        {
+          "id": "staryy",
+          "ok": false,
+          "status": 404,
+          "ms": 78,
+          "error": ""
+        }
+      ]
+    },
+    {
+      "time": "2026-11-19T18:19:09.810Z",
+      "checks": [
+        {
+          "id": "git",
+          "ok": true,
+          "status": 200,
+          "ms": 168,
+          "error": ""
+        },
+        {
+          "id": "mongodb",
+          "ok": true,
+          "status": 200,
+          "ms": 90,
+          "error": ""
+        },
+        {
+          "id": "english",
+          "ok": true,
+          "status": 200,
+          "ms": 65,
+          "error": ""
+        },
+        {
+          "id": "sysprog",
+          "ok": true,
+          "status": 200,
+          "ms": 77,
+          "error": ""
+        },
+        {
+          "id": "sphinx",
+          "ok": true,
+          "status": 200,
+          "ms": 46,
+          "error": ""
+        },
+        {
+          "id": "staryy",
+          "ok": false,
+          "status": 404,
+          "ms": 30,
+          "error": ""
+        }
+      ]
+    },
+    {
+      "time": "2026-11-19T18:00:21.439Z",
+      "checks": [
+        {
+          "id": "git",
+          "ok": true,
+          "status": 200,
+          "ms": 194,
+          "error": ""
+        },
+        {
+          "id": "mongodb",
+          "ok": true,
+          "status": 200,
+          "ms": 66,
+          "error": ""
+        },
+        {
+          "id": "english",
+          "ok": true,
+          "status": 200,
+          "ms": 35,
+          "error": ""
+        },
+        {
+          "id": "sysprog",
+          "ok": true,
+          "status": 200,
+          "ms": 36,
+          "error": ""
+        },
+        {
+          "id": "sphinx",
+          "ok": true,
+          "status": 200,
+          "ms": 27,
+          "error": ""
+        },
+        {
+          "id": "staryy",
+          "ok": false,
+          "status": 404,
+          "ms": 13,
+          "error": ""
+        }
+      ]
+    },
+    {
+      "time": "2026-11-19T17:52:25.091Z",
+      "checks": [
+        {
+          "id": "git",
+          "ok": true,
+          "status": 200,
+          "ms": 186,
+          "error": ""
+        },
+        {
+          "id": "mongodb",
+          "ok": true,
+          "status": 200,
+          "ms": 124,
+          "error": ""
+        },
+        {
+          "id": "english",
+          "ok": true,
+          "status": 200,
+          "ms": 92,
+          "error": ""
+        },
+        {
+          "id": "sysprog",
+          "ok": true,
+          "status": 200,
+          "ms": 93,
+          "error": ""
+        },
+        {
+          "id": "sphinx",
+          "ok": true,
+          "status": 200,
+          "ms": 92,
+          "error": ""
+        },
+        {
+          "id": "staryy",
+          "ok": false,
+          "status": 404,
+          "ms": 83,
+          "error": ""
+        }
+      ]
+    },
+    {
+      "time": "2026-11-19T17:39:13.299Z",
+      "checks": [
+        {
+          "id": "git",
+          "ok": true,
+          "status": 200,
+          "ms": 362,
+          "error": ""
+        },
+        {
+          "id": "mongodb",
+          "ok": true,
+          "status": 200,
+          "ms": 292,
+          "error": ""
+        },
+        {
+          "id": "english",
+          "ok": true,
+          "status": 200,
+          "ms": 209,
+          "error": ""
+        },
+        {
+          "id": "sysprog",
+          "ok": true,
+          "status": 200,
+          "ms": 198,
+          "error": ""
+        },
+        {
+          "id": "sphinx",
+          "ok": true,
+          "status": 200,
+          "ms": 204,
+          "error": ""
+        },
+        {
+          "id": "staryy",
+          "ok": false,
+          "status": 404,
+          "ms": 205,
+          "error": ""
+        }
+      ]
+    }
+  ]
+}

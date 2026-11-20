@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* Из нового файла: приоритетный шрифт Inter */
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: #f5f6f9;
+  color: #1f2430;
+}
+
+a {
+  color: #2563d0;
+}
+
+/* --- Header & Navigation --- */
+.header {
+  padding: 24px 32px 0;
+  background: #1f2430;
+  color: #ffffff;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header p {
+  /* Из нового файла: изменен нижний отступ */
+  margin: 6px 0 16px;
+  color: #c4cad8;
+}
+
+.nav {
+  display: flex;
+  /* Из нового файла: уменьшен gap */
+  gap: 4px; 
+  margin-top: 0;
+}
+
+/* Адаптировано под классы из App.tsx */
+.nav__link {
+  /* Из нового файла: паддинги и скругления */
+  padding: 10px 16px;
+  border-radius: 8px 8px 0 0;
+  color: #c4cad8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav__link:hover {
+  color: #ffffff;
+}
+
+.nav__link--active {
+  background: #f5f6f9;
+  color: #1f2430;
+  /* Из нового файла: жирный шрифт для активной вкладки */
+  font-weight: 600; 
+}
+
+/* --- Main Layout --- */
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+/* --- Alert Banner --- */
+/* Новый файл использует .summary и .summary--bad, 
+   мы перенесли его цвета в ваши классы .alert */
+.alert {
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.alert--error {
+  background: #fde8e8;
+  color: #b42318;
+}
+
+.load-error {
+  padding: 16px;
+  border-radius: 8px;
+  background: #fde8e8;
+  color: #b42318;
+}
+
+/* --- Sites Grid --- */
+.sites {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* Из нового файла: gap уменьшен до 12px */
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #dfe3eb;
+  border-left: 6px solid #2e9d5b;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.site:hover {
+  /* Из нового файла: подсветка синим при наведении */
+  border-color: #2563d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.site--bad {
+  border-left-color: #d23b3b;
+}
+
+/* Из нового файла: делаем ссылку внутри карточки flex-контейнером */
+.site__link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site__link:hover h2 {
+  color: #2563d0;
+}
+
+.site h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #1f2430;
+  transition: color 0.2s;
+}
+
+.site__status {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  /* Из нового файла: более темный зеленый цвет */
+  color: #1e7a46;
+  margin-bottom: 8px;
+}
+
+.site--bad .site__status {
+  color: #d23b3b;
+}
+
+.site__url {
+  color: #2563d0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  display: block;
+}
+
+/* --- Site Details Page --- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #2563d0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.site-detail__title {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.site-detail__url {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #2563d0;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.site-detail__url:hover {
+  text-decoration: underline;
+}
+
+.site-detail__summary {
+  color: #3d4557;
+  margin-bottom: 24px;
+}
+
+/* --- Tables --- */
+.checks-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #dde1ea;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.checks-table th,
+.checks-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #dde1ea;
+  text-align: left;
+}
+
+.checks-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #5b6478;
+}
+
+.checks-table td:last-child {
+  text-align: right;
+}
+
+.checks-table tr:last-child td {
+  border-bottom: none;
+}
+
+.row-ok {
+  background: #ffffff;
+}
+
+.row-ok td {
+  color: #2e9d5b;
+}
+
+.row-bad {
+  background: #fde8e8;
+}
+
+.row-bad td {
+  color: #b42318;
+}
+
+/* --- About Page & 404 --- */
+.about-page h2,
+.not-found h2 {
+  margin-top: 0;
+}
+
+.about-page p {
+  line-height: 1.6;
+  color: #3d4557;
+  max-width: 800px;
+}
